@@ -1,6 +1,5 @@
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const CLEAR_POST_INPUT = 'CLEAR_POST_INPUT'
 
 let initialState = {
     posts: [
@@ -25,8 +24,6 @@ const profileReducer = (state = initialState, action) => {
             state.posts.push(newPost);
             state.newPostText = '';
             break;
-        case CLEAR_POST_INPUT:
-            state.newPostText = '';
     }
     return state;
 }
@@ -37,8 +34,5 @@ export const addNewPostActionCreator = (text) => {
         type: UPDATE_NEW_POST_TEXT, newText: text,
     }
 }
-export const clearNewPostActionCreator = () => ({
-    type: CLEAR_POST_INPUT
-})
 
 export default profileReducer;
